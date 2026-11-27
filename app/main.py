@@ -8,29 +8,17 @@ from app.services.vehicle_service import (
     update_all_vehicles
 )
 
+from app.data.vehicles import (
+    documents, 
+    ids, 
+    metadatas
+)
+
 # CREATE
 add_vehicle(
-    documents = [
-        "car runs on road",
-        "bike runs on road",
-        "boat runs on water",
-        "plane flies in the sky",
-        "bus runs on road"
-    ],
-    ids = [
-        "car",
-        "bike",
-        "boat",
-        "plane",
-        "bus"
-    ],
-    metadatas=[
-        {"type": "public_transportation", "capacity": 5, "fuel": "diesel" },
-        {"type": "personal", "capacity": 2, "fuel": "petrol" },
-        {"type": "water_transportation", "capacity": 10, "fuel": "diesel" },
-        {"type": "air_transportation", "capacity": 100, "fuel": "gasoline" },
-        {"type": "public_transportation", "capacity": 50, "fuel": "diesel" },
-    ]
+    documents = documents,
+    ids = ids,
+    metadatas = metadatas
 )
 
 # READ
@@ -52,27 +40,9 @@ delete_vehicle("boat")
 
 # UPDATE ALL
 update_all_vehicles(
-    documents=[
-        "car runs on highway",
-        "bike runs on road",
-        "boat runs on water",
-        "plane flies in the sky",
-        "bus runs on road"
-    ],
-    ids=[
-        "car",
-        "bike",
-        "boat",
-        "plane",
-        "bus"
-    ],
-    metadatas=[
-        {"type": "public_transportation", "capacity": 5, "fuel": "diesel" },
-        {"type": "personal", "capacity": 2, "fuel": "petrol" },
-        {"type": "water_transportation", "capacity": 10, "fuel": "diesel" },
-        {"type": "air_transportation", "capacity": 100, "fuel": "gasoline" },
-        {"type": "public_transportation", "capacity": 50, "fuel": "diesel" },
-    ]
+    documents = documents,
+    ids = ids,
+    metadatas = metadatas
 )   
 
 # VIEW METADATAS
