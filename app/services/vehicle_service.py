@@ -4,8 +4,8 @@ from app.config.chroma_config import collection
 
 #CREATE
 
-def add_vehicle(documents, ids):
-    collection.add(documents=documents, ids=ids)
+def add_vehicle(documents, ids, metadatas=None):
+    collection.add(documents=documents, ids=ids, metadatas=metadatas)
 
 # READ
 def get_vehicles():
@@ -22,3 +22,11 @@ def delete_vehicle(vehicle_id):
 # SEARCH
 def search_vehicle(query):
     return collection.query(query_texts=[query])
+
+# VIEW METADATAS
+def view_metadatas():
+    return collection.get(include=["documents", "metadatas"])
+
+# UPDATE ALL
+def update_all_vehicles(documents, ids, metadatas=None):
+    collection.update(documents=documents, ids=ids, metadatas=metadatas)
